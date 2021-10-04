@@ -17,7 +17,6 @@ npm run compile
 ### Usage
 
 ```sh
-# node
 npm run start
 ```
 
