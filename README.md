@@ -1,6 +1,6 @@
 # Typescript app
 
-A typescript application from Udemy course to test some features.
+A typescript sandbox used in a Udemy course to test some features.
 
 ### Install dependencies
 
