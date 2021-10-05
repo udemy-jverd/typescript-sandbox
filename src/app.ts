@@ -1,25 +1,16 @@
-class Department {
-    private name: string = '';
-    private employees: string[] = [];
+// interface IPerson {
+//     name: string;
+//     age: number;
 
-    constructor(name: string) {
-        this.name = name;
-    }
+//     sing(words: string): void
+// }
 
-    public describe() {
-        console.log(`Department: ${this.name}`);
-    }
+// const user: IPerson = {
+//     name: 'Bobby',
+//     age: 28,
+//     sing(words: string) {
+//         console.log(words);
+//     }
+// }
 
-    public hireEmployee(employee: string) {
-        this.employees.push(employee);
-    }
-
-    public countEmployees() {
-        console.log(`Employees count: ${this.employees.length}`);
-    }
-}
-
-const accounting = new Department('Accounting');
-accounting.hireEmployee('Max');
-accounting.hireEmployee('Bob');
-accounting.countEmployees();
+// user.sing('Hello');
