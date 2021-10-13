@@ -1,4 +1,4 @@
-# Typescript app
+# Typescript sandbox
 
 A typescript sandbox used in a Udemy course to test some features.
 
