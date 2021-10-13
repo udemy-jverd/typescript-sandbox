@@ -2,7 +2,7 @@
 
 ## Decorators
 
-First class decorator:
+Decorator function:
 
 ```ts
 function Logger(constructor: Person) {
@@ -68,4 +68,67 @@ class Person {
 
 const person = new Person("Max");
 console.log(person);
+```
+
+```ts
+const Logger = (target: any, property: string | symbol) => {
+  console.log(target);
+  console.log(property);
+};
+
+class Product {
+  @Logger
+  private title: string;
+  private price: number;
+
+  constructor(title: string, price: number) {
+    this.title = title;
+    this.price = price;
+  }
+
+  public setPrice(price: number): void {
+    if (price > 0) {
+      this.price = price;
+    }
+  }
+
+  public getPriceWithTaxe(tax: number): number {
+    return this.price * (1 + tax);
+  }
+}
+
+const tesla = new Product("Tesla", 128000);
+console.log(tesla);
+```
+
+```ts
+const Logger = (target: any, name: string, descriptor: any) => {
+  console.log(target);
+  console.log(name);
+  console.log(descriptor);
+};
+
+class Product {
+  private title: string;
+  private price: number;
+
+  constructor(title: string, price: number) {
+    this.title = title;
+    this.price = price;
+  }
+
+  public setPrice(price: number): void {
+    if (price > 0) {
+      this.price = price;
+    }
+  }
+
+  @Logger
+  public getPriceWithTaxe(tax: number): number {
+    return this.price * (1 + tax);
+  }
+}
+
+const tesla = new Product("Tesla", 128000);
+console.log(tesla);
 ```
